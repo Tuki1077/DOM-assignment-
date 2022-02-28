@@ -1,0 +1,28 @@
+<html>
+    <body>
+        <form>
+            <input type = "text" id = "myid">
+            <br>
+        </form>
+        <button type = "submit" onclick="addList(list)"> Submit</button>
+
+        <div id = "container">
+            <ul id = "list">
+                <li>Dog</li>
+            </ul>
+        </div>
+    </body>
+    <script>
+        function addList(list){
+            var text = "";
+            var inp = document.querySelectorAll("input[type=text]");
+            for (let i = 0; i < inp.length; i++){
+                text += inp[i].value;
+            }
+            var li = document.createElement("li");
+            var node = document.createTextNode(text);
+            li.appendChild(node);
+            document.getElementById("list").appendChild(li);
+        }
+    </script>
+</html>
