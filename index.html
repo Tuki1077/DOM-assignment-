@@ -18,17 +18,54 @@
         </style>
         <title>DOM Access</title>
     </head>
-            <body>
+<body>
 <h1>Test Yourself</h1>
 <h2>Test Adding Event listeners to Elements on the DOM</h2>
 <div>
-<button class="green undo">Click to change this to green</button>
-<button >Click to change this to blue</button>
-<button >Click to change this to red</button>
-<button >Undo</button>
+    <button id = "button1">
+        Click to change this to green
+    </button>
+    <button id = "button2">
+        Hover to change this to blue
+    </button>
+    <button id = "button3">
+        Hover to change this to red
+    </button>
+    <button id = "undo">
+        Hover to Undo
+    </button>
 </div>
+
 <script>
+    function changeGreen(){
+        let changeColorGreen = document.getElementById("button1");
+        changeColorGreen.style.backgroundColor = 'green';
+    }
+    function changeBlue(){
+        let changeColorBlue = document.getElementById("button2")
+        changeColorBlue.style.backgroundColor = 'blue';
+    }
+    function changeRed(){
+        let changeColorRed = document.getElementById("button3");
+        document.getElementById("button3").style.backgroundColor = 'red';
+    }
+    function changeToUndo(){
+        let changeUndo = document.getElementsByTagName("button");
+        for (let i = 0; i<changeUndo.length; i++){
+            changeUndo[i].style.backgroundColor = 'black';
+        }
+    }
+
+    const green = document.getElementById('button1');
+    const blue = document.getElementById('button2');
+    const red = document.getElementById('button3');
+    const undo = document.getElementById('undo');
+
     
+    green.addEventListener("mouseover", changeGreen, false);
+    blue.addEventListener("mouseover", changeBlue, false);
+    red.addEventListener("mouseover", changeRed, false);
+    undo.addEventListener("mouseover", changeToUndo, false);
 </script>
 </body>
 </html>
